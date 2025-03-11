@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign in & Sign up Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!-- New Top Right Image -->
+                <!-- Sign In Form -->
+                <form onsubmit="return validateLogin()" class="sign-in-form">
+                    <!-- New Top Right Image -->
+                    <!-- <img src="C:\Users\MBR\Desktop\Edu_link2\final_logo (1).png" class="top-right-image"
+                        alt="Sign In Top Right" /> -->
+                    <h1 class="text-3xl font-bold tracking-tight rainbow-text_login">EduLink<span class="text-pink-400">.</span></h1>
+                    <!-- <p class="rainbow-text">Connecting Minds, Empowering Futures!</p> -->
+
+                    <h2 class="title">Sign in</h2>
+                    
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" placeholder="Username/Email" required />
+                    </div>
+                    
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password" required />
+                    </div>
+                    <div id="login-message"></div>
+                    <input type="submit" value="Login" class="btn solid" />
+
+                    <p class="social-text">Or Sign in with social platforms</p>
+                    <div class="social-media">
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                      </a>
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </div>
+                </form>
+
+                <form onsubmit="return handleSignUp(event)" class="sign-up-form">
+                    <!-- New Top Left Image -->
+                    <!-- <img src="C:\Users\MBR\Desktop\Edu_link2\final_logo (1).png" class="top-left-image" -->
+                        <!-- alt="Sign Up Top Left" /> -->
+                    <!-- <p class="logo-text-left">Connecting Minds, Empowering Futures!</p> -->
+                    <h1 class="text-3xl font-bold tracking-tight rainbow-text_signup">EduLink<span class="text-pink-400">.</span></h1>
+
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username_signup" placeholder="Username/Email" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password_signup" placeholder="Password" required />
+                    </div>
+                    <div id="signup-message"></div>
+                    <input type="submit" class="btn" value="Sign up" />
+
+                    <p class="social-text">Or Sign up with social platforms</p>
+                    <div class="social-media">
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                      </a>
+                      <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    <p>
+                        Welcome to Edu Link!<br>
+                        Join Edu Link today and unlock new opportunities!<br>
+                        Sign up now to start your journey.
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
+                </div>
+                <img src="C:\Users\MN\Downloads\Edulink (1)\Edulink\undraw_login_wqkt (4).svg" class="image_login" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us ?</h3>
+                    <p>
+                        Welcome back to Edu Link!<br>
+                        Your journey of learning and growth continues here.<br>
+                        Sign in to access exclusive resources and stay connected with your community.
+
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+                <img src="C:\Users\MN\Downloads\Edulink (1)\Edulink\undraw_hello_ccwj (4).svg" class="image_signup" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

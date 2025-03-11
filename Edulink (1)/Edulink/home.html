@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - EduLink</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .rainbow-text {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96C93D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.5s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Dashboard Layout -->
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg fixed h-full">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold rainbow-text">MyEduLink</h2>
+                <nav class="mt-8">
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 text-purple-600 hover:bg-purple-50 p-3 rounded-lg">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 text-gray-600 hover:bg-purple-50 p-3 rounded-lg">
+                                <i class="fas fa-book-open"></i>
+                                <span>My Courses</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 text-gray-600 hover:bg-purple-50 p-3 rounded-lg">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 text-gray-600 hover:bg-purple-50 p-3 rounded-lg">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 ml-64 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-purple-600">Welcome Back, <span class="rainbow-text">Rawan!</span></h1>
+                <div class="flex items-center space-x-4">
+                    <div class="badge badge-lg bg-pink-100 text-pink-600">
+                        <i class="fas fa-star mr-2"></i>Gold Member
+                    </div>
+                    <div class="avatar">
+                        <div class="w-12 rounded-full">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Progress Card -->
+                <div class="card bg-white shadow-lg" data-aos="fade-right">
+                    <div class="card-body">
+                        <h3 class="card-title text-purple-600">
+                            <i class="fas fa-tachometer-alt mr-2"></i>Learning Progress
+                        </h3>
+                        <div class="radial-progress text-pink-500" style="--value:75; --size:8rem;">75%</div>
+                        <p class="text-gray-600 mt-2">Current Course: Advanced Mathematics</p>
+                    </div>
+                </div>
+
+                <!-- Focus Meter -->
+                <div class="card bg-white shadow-lg" data-aos="fade-up">
+                    <div class="card-body">
+                        <h3 class="card-title text-purple-600">
+                            <i class="fas fa-brain mr-2"></i>Focus Analytics
+                        </h3>
+                        <div class="flex items-center space-x-4">
+                            <div class="radial-progress text-blue-500" style="--value:82; --size:8rem;">82%</div>
+                            <div>
+                                <p class="text-gray-600">Avg. Focus Duration: 48min</p>
+                                <div class="badge badge-success gap-2 mt-2">
+                                    <i class="fas fa-smile"></i> Positive Engagement
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Tutor -->
+                <div class="card bg-white shadow-lg" data-aos="fade-left">
+                    <div class="card-body">
+                        <h3 class="card-title text-purple-600">
+                            <i class="fas fa-robot mr-2"></i>AI Tutor
+                        </h3>
+                        <div class="chat chat-start">
+                            <div class="chat-bubble bg-purple-100 text-purple-600">
+                                Ready for today's session? Let's continue with Calculus!
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mt-4 w-full bg-pink-500 border-none hover:bg-pink-600">
+                            Start Learning Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Current Courses -->
+                <div class="card bg-white shadow-lg" data-aos="zoom-in">
+                    <div class="card-body">
+                        <h3 class="card-title text-purple-600">
+                            <i class="fas fa-book mr-2"></i>Active Courses
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
+                                <div>
+                                    <h4 class="font-bold">Advanced Mathematics</h4>
+                                    <div class="w-48 h-2 bg-gray-200 rounded-full mt-2">
+                                        <div class="h-2 bg-pink-500 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <span class="text-pink-500">3h 45m left</span>
+                            </div>
+                            <!-- Repeat similar blocks for other courses -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Analytics -->
+                <div class="card bg-white shadow-lg" data-aos="zoom-in">
+                    <div class="card-body">
+                        <h3 class="card-title text-purple-600">
+                            <i class="fas fa-chart-bar mr-2"></i>Performance Metrics
+                        </h3>
+                        <div class="flex space-x-4">
+                            <div class="flex-1">
+                                <h4 class="text-gray-600 mb-2">Learning Style</h4>
+                                <div class="radial-progress text-purple-500" style="--value:60; --size:6rem;">Visual</div>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-gray-600 mb-2">Emotion Analysis</h4>
+                                <div class="text-4xl">😊</div>
+                                <p class="text-sm text-gray-600 mt-1">Positive Engagement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <button class="btn bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:scale-105 transition-all">
+                    <i class="fas fa-video mr-2"></i>Live Class
+                </button>
+                <button class="btn bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:scale-105 transition-all">
+                    <i class="fas fa-question-circle mr-2"></i>Ask AI Tutor
+                </button>
+                <button class="btn bg-gradient-to-r from-green-500 to-teal-500 text-white hover:scale-105 transition-all">
+                    <i class="fas fa-tasks mr-2"></i>Assignments
+                </button>
+                <button class="btn bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:scale-105 transition-all">
+                    <i class="fas fa-trophy mr-2"></i>Achievements
+                </button>
+            </div>
+
+           <!-- AI Chatbot Floating Button -->
+<div class="fixed bottom-8 right-8">
+    <button id="chat-button" class="btn btn-circle btn-primary w-16 h-16 bg-pink-500 border-none hover:bg-pink-600 shadow-lg">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+</div>
+
+<!-- Chatbox UI -->
+<div id="chat-box" class="fixed bottom-20 right-8 bg-white shadow-lg w-80 p-4 rounded-lg hidden">
+    <div class="flex justify-between items-center">
+        <h3 class="text-lg font-bold text-purple-600">AI Tutor</h3>
+        <div>
+            <button id="chat-minimize" class="text-gray-500 hover:text-gray-800 mr-2">
+                <i class="fas fa-window-minimize"></i>
+            </button>
+            <button id="chat-close" class="text-red-500 hover:text-red-800">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div id="chat-messages" class="h-40 overflow-y-auto mt-2 p-2 bg-gray-100 rounded"></div>
+    <div class="mt-3 flex">
+        <input id="chat-input" type="text" class="input input-bordered flex-1" placeholder="Ask me anything..." />
+        <button id="chat-send" class="btn btn-primary ml-2">Send</button>
+    </div>
+</div>
+
+<!-- Chatbox UI -->
+<div id="chat-box" class="fixed bottom-20 right-8 bg-white shadow-lg w-80 p-4 rounded-lg hidden">
+    <h3 class="text-lg font-bold text-purple-600">AI Tutor</h3>
+    <div id="chat-messages" class="h-40 overflow-y-auto mt-2"></div>
+    <div class="mt-3 flex">
+        <input id="chat-input" type="text" class="input input-bordered flex-1" placeholder="Ask me anything..." />
+        <button id="chat-send" class="btn btn-primary ml-2">Send</button>
+    </div>
+</div>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const chatButton = document.getElementById("chat-button");
+    const chatBox = document.getElementById("chat-box");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+    const chatMinimize = document.getElementById("chat-minimize");
+    const chatClose = document.getElementById("chat-close");
+
+    let isMinimized = false;
+
+    chatButton.addEventListener("click", function () {
+        if (chatBox.classList.contains("hidden")) {
+            chatBox.classList.remove("hidden");
+            isMinimized = false;
+        } else if (isMinimized) {
+            chatBox.classList.remove("h-12", "overflow-hidden");
+            isMinimized = false;
+        } else {
+            chatBox.classList.add("hidden");
+        }
+    });
+
+    chatMinimize.addEventListener("click", function () {
+        chatBox.classList.toggle("h-12");
+        chatBox.classList.toggle("overflow-hidden");
+        isMinimized = !isMinimized;
+    });
+
+    chatClose.addEventListener("click", function () {
+        chatBox.classList.add("hidden");
+    });
+
+    chatSend.addEventListener("click", async function () {
+        const userMessage = chatInput.value.trim();
+        if (!userMessage) return;
+
+        appendMessage("You", userMessage);
+
+        try {
+            const response = await fetch("http://127.0.0.1:5000/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            });
+
+            const data = await response.json();
+            appendMessage("AI", data.response || "Sorry, I couldn't respond.");
+        } catch (error) {
+            appendMessage("AI", "Error connecting to AI.");
+        }
+
+        chatInput.value = "";
+    });
+
+    function appendMessage(sender, message) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("p-3", "rounded-lg", sender === "You" ? "bg-blue-100" : "bg-gray-200");
+        messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+        document.getElementById("chat-messages").appendChild(messageDiv);
+    }
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLink Platform</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes waveAnimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .hero-wave-container {
+            position: absolute; 
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 200px;
+            animation: waveAnimation 20s linear infinite;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            min-height: calc(100vh - 4rem);
+        }
+
+        .wave-path {
+            fill: rgba(255, 255, 255, 0.15);
+        }
+
+        .rainbow-text {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96C93D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-50 to-purple-50">
+
+    <!-- Header -->
+    <!-- Header -->
+<header class="sticky top-0 z-50 bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4 lg:px-8 py-4">
+        <h1 class="text-3xl font-bold tracking-tight rainbow-text">EduLink<span class="text-pink-400">.</span></h1>
+        <nav class="hidden md:block">
+            <ul class="flex space-x-8 items-center">
+                <li><a href="#" class="hover:text-pink-300 transition-colors duration-300 relative group">Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-300 transition-all group-hover:w-full"></span>
+                </a></li>
+                <li><a href="trials.html" class="ml-4 bg-pink-400 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-500 transition-colors duration-300 shadow-lg">Login</a></li>
+            </ul>
+        </nav>
+        <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+</header>
+
+    <!-- Hero Section with Wave -->
+    <section class="relative text-center bg-gradient-to-br from-purple-600 to-blue-600 text-white overflow-hidden">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 items-center hero-content py-12" data-aos="fade-up">
+            <div class="text-left" data-aos="fade-right">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                    Transform Your Learning with 
+                    <span class="rainbow-text block mt-2">Smart Education</span>
+                </h2>
+                <p class="text-base md:text-lg text-purple-100 mb-6">
+                    Interactive courses, AI mentors, and gamified learning experiences!
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="trials.html" class="bg-pink-400 text-white px-6 py-3 rounded-full font-bold hover:bg-pink-500 transition-colors duration-300 shadow-lg transform hover:scale-105 text-sm md:text-base">
+                        Start Journey
+                    </a>
+                    <!-- <a href="#" class="border-2 border-pink-300 text-pink-300 px-6 py-3 rounded-full font-bold hover:bg-pink-400/20 transition-colors duration-300 transform hover:scale-105 text-sm md:text-base">
+                        Explore Courses
+                    </a> -->
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center mt-8 md:mt-0" data-aos="fade-left">
+                <img src="C:\Users\MN\Downloads\Edulink\Edulink\undraw_learning-sketchingsh.svg" 
+                     alt="Learning illustration" 
+                     class="w-full max-w-md transform hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+
+        <!-- Enhanced Wave -->
+        <div class="hero-wave-container">
+            <svg viewBox="0 0 500 200" preserveAspectRatio="none" class="h-full w-full">
+                <path d="M0,120 C150,180 350,60 500,120 L500,200 L0,200 Z" class="wave-path"></path>
+            </svg>
+        </div>
+    </section>
+ 
+    <!-- Features Section -->
+    <!-- <section class="py-20 bg-gradient-to-b from-white to-blue-50" id="courses">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-16 text-purple-600" data-aos="fade-up">
+                Why Choose EduLink?
+            </h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-gradient-to-br from-white to-pink-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-aos="flip-left">
+                    <div class="w-16 h-16 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-3xl text-pink-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-purple-600">AI Tutors</h4>
+                    <p class="text-gray-600">24/7 personalized learning assistance with our smart AI mentors.</p>
+                </div>
+
+                <div class="p-8 bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-aos="flip-left" data-aos-delay="150">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-gamepad text-3xl text-blue-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-purple-600">Gamified Learning</h4>
+                    <p class="text-gray-600">Earn badges, level up, and compete on leaderboards!</p>
+                </div>
+
+                <div class="p-8 bg-gradient-to-br from-white to-purple-50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-aos="flip-left" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-3xl text-purple-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-purple-600">Live Classes</h4>
+                    <p class="text-gray-600">Interactive sessions with teachers and classmates worldwide.</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section
+    <section class="py-20 bg-gradient-to-b from-purple-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-16 text-purple-600" data-aos="fade-up">
+                Student Success Stories
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 bg-white rounded-2xl shadow-lg" data-aos="zoom-in">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                             alt="Student" 
+                             class="w-16 h-16 rounded-full mr-4 border-4 border-pink-300 shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-purple-600">Maria Gonzalez</h4>
+                            <p class="text-gray-600">Coding Bootcamp Graduate</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"The game-like challenges made learning to code addictive! Landed my first developer job after 6 months."</p>
+                    <div class="mt-4 flex space-x-2">
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-2xl shadow-lg" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                             alt="Student" 
+                             class="w-16 h-16 rounded-full mr-4 border-4 border-blue-300 shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-purple-600">James Smith</h4>
+                            <p class="text-gray-600">Graphic Design Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"The AI tutor helped me overcome creative blocks. My design skills improved faster than I imagined!"</p>
+                    <div class="mt-4 flex space-x-2">
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- About Section -->
+<section class="py-20 bg-gradient-to-b from-white to-purple-50" id="about">
+    <div class="container mx-auto px-4">
+        <h3 class="text-3xl md:text-5xl font-bold text-center mb-16 text-purple-600" data-aos="zoom-in">
+            Revolutionizing Learning with <span class="rainbow-text">AI Magic</span>
+        </h3>
+
+        <!-- Feature Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Learning Style Survey -->
+            <div class="p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300" 
+                 data-aos="fade-right"
+                 data-aos-delay="100">
+                <div class="w-20 h-20 bg-pink-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-brain text-4xl text-pink-500 animate-pulse"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-4 text-purple-600">
+                    <span class="rainbow-text">Smart Profile</span> Creation
+                </h4>
+                <p class="text-gray-600">
+                    Our 5-minute AI-powered quiz identifies your unique learning style - visual, logical, auditory, or kinesthetic.
+                </p>
+                <div class="mt-4 bg-purple-100 p-4 rounded-lg" data-aos="fade-up">
+                    <p class="text-sm text-purple-600 italic">
+                        "Discover your learning DNA and unlock your full potential!"
+                    </p>
+                </div>
+            </div>
+
+            <!-- Real-Time Monitoring -->
+            <div class="p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300" 
+                 data-aos="fade-up"
+                 data-aos-delay="200">
+                <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-eye text-4xl text-blue-500 animate-bounce"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-4 text-purple-600">
+                    <span class="rainbow-text">Focus & Emotion</span> Tracking
+                </h4>
+                <p class="text-gray-600">
+                    Our CV system gently monitors engagement levels and emotional responses to optimize content delivery.
+                </p>
+                <div class="mt-4 bg-gradient-to-r from-blue-100 to-purple-100 p-4 rounded-lg" data-aos="fade-up">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                        <span class="text-sm text-blue-600">Real-time attention analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Evaluation -->
+            <div class="p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300" 
+                 data-aos="fade-left"
+                 data-aos-delay="300">
+                <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-robot text-4xl text-purple-500 animate-bounce"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-4 text-purple-600">
+                    <span class="rainbow-text">GenAI</span> Evaluation
+                </h4>
+                <p class="text-gray-600">
+                    Advanced AI analyzes performance with contextual understanding, providing human-like feedback.
+                </p>
+                <div class="mt-4 flex items-center space-x-2 bg-purple-100 p-3 rounded-lg">
+                    <i class="fas fa-comment-dots text-purple-500"></i>
+                    <span class="text-sm text-purple-600">"Great progress! Let's work on trigonometry next!"</span>
+                </div>
+            </div>
+
+            <!-- Chat Assistant -->
+            <div class="p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 col-span-full lg:col-span-1" 
+                 data-aos="flip-up"
+                 data-aos-delay="400">
+                <div class="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-comments text-4xl text-teal-500"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-4 text-purple-600">
+                    24/7 <span class="rainbow-text">Study Buddy</span>
+                </h4>
+                <p class="text-gray-600">
+                    Instant answers to academic questions with contextual understanding and Socratic teaching approach.
+                </p>
+                <div class="mt-4 bg-white p-4 rounded-lg shadow-md" data-aos="zoom-in">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-teal-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-robot text-white text-sm"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 flex-1 animate-pulse">
+                            "Let's break down this physics problem step by step..."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Visualization -->
+            <div class="p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 col-span-full lg:col-span-2" 
+                 data-aos="flip-left"
+                 data-aos-delay="500">
+                <div classw-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-chart-line text-4xl text-orange-500"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-4 text-purple-600">
+                    <span class="rainbow-text">Smart Analytics</span> Dashboard
+                </h4>
+                <p class="text-gray-600">
+                    Interactive reports combining performance data, focus patterns, and emotional engagement metrics.
+                </p>
+                <div class="mt-4 bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-lg flex items-center space-x-4">
+                    <div class="radial-progress text-purple-500" style="--value:85; --size:3rem;">85%</div>
+                    <div>
+                        <p class="text-sm text-purple-600">Current Engagement Score</p>
+                        <div class="flex space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Closing Statement -->
+        <div class="text-center mt-16" data-aos="fade-up">
+            <p class="text-xl md:text-2xl text-purple-600 font-semibold">
+                "Where <span class="rainbow-text">technology meets empathy</span> to create<br>
+                truly human-centered learning experiences"
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="mb-8">
+                    <h5 class="text-2xl font-bold mb-4 rainbow-text">EduLink<span class="text-pink-400">.</span></h5>
+                    <p class="text-purple-100">Making learning fun and effective through technology innovation.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold mb-4">Quick Links</h6>
+                    <ul class="space-y-2 text-purple-200">
+                        <li><a href="#" class="hover:text-pink-300 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-pink-300 transition-colors">Courses</a></li>
+                        <li><a href="#" class="hover:text-pink-300 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-pink-300 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-bold mb-4">Connect</h6>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl text-purple-200 hover:text-pink-300"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-2xl text-purple-200 hover:text-pink-300"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="text-2xl text-purple-200 hover:text-pink-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl text-purple-200 hover:text-pink-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="font-bold mb-4">Newsletter</h6>
+                    <form class="flex">
+                        <input type="email" placeholder="Enter your email" 
+                               class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button class="bg-pink-400 text-white px-4 py-2 rounded-r-lg font-bold hover:bg-pink-500 transition-colors">
+                            Join
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-purple-400/30 mt-8 pt-8 text-center text-purple-200">
+                <p>&copy; 2025 EduLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>

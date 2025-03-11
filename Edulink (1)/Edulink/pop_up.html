@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Include SweetAlert2 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        @keyframes waveAnimation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .wave-container {
+            position: relative;
+            overflow: hidden;
+            height: 150px;
+        }
+
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            animation: waveAnimation 10s linear infinite;
+        }
+
+        .survey-box {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .rainbow-text {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96C93D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-blue-50 to-purple-50">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4 lg:px-8 py-4">
+            <h1 class="text-3xl font-bold tracking-tight rainbow-text">EduLink<span class="text-pink-400">.</span></h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 items-center">
+                    <li><a href="trials.html"
+                            class="ml-4 bg-pink-400 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-500 transition-colors duration-300 shadow-lg">Exit</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+<!-- VARK Information Section -->
+<section id="vark-info" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8 leading-tight">
+            <span class="bg-gradient-to-r from-pink-500 to-purple-400 text-transparent bg-clip-text">VARK</span>
+            <span class="bg-gradient-to-r from-green-500 to-blue-400 text-transparent bg-clip-text"> Learning Styles</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Visual -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-blue-500 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                <i class="fas fa-eye text-blue-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Visual (V)</h3>
+                <p class="text-gray-600 mt-2">Learners prefer images, diagrams, and charts to understand concepts.</p>
+            </div>
+
+            <!-- Aural -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-green-500 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                <i class="fas fa-volume-up text-green-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Aural (A)</h3>
+                <p class="text-gray-600 mt-2">Learners absorb information best through listening and discussions.</p>
+            </div>
+
+            <!-- Read/Write (Updated to Yellow) -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-yellow-400 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                <i class="fas fa-book text-yellow-400 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Read/Write (R)</h3>
+                <p class="text-gray-600 mt-2">Learners benefit from written text, lists, and reading materials.</p>
+            </div>
+
+            <!-- Kinesthetic -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-red-500 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                <i class="fas fa-hands text-red-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Kinesthetic (K)</h3>
+                <p class="text-gray-600 mt-2">Learners understand better through hands-on experience and movement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Survey Section -->
+    <section class="container mx-auto mt-8 p-6 bg-white shadow-lg rounded-lg survey-box animate-fade-in">
+        <h2 class="text-3xl font-extrabold text-center text-purple-700 mb-4"> Shape Your Perfect Learning Journey! 🎯
+        </h2>
+        <p class="text-center text-gray-600 mb-6 ">Answer this quick survey to help us create the best learning
+            experience just for you! 🚀</p>
+
+        <div class="space-y-6">
+            <!-- Question 1 -->
+            <div
+                class="p-4 bg-gradient-to-r from-purple-200 to-pink-200 shadow-md rounded-lg transition-transform transform hover:scale-105">
+
+
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <i class="fas fa-book-reader text-purple-600 mr-2"></i> You want to learn a new software program,
+                    skill, or game. You would:
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q1" class="form-checkbox text-purple-600" value="A"> Talk to people
+                        who
+                        know about it.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q1" class="form-checkbox text-purple-600" value="B"> Follow the
+                        diagrams in the manual
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q1" class="form-checkbox text-purple-600" value="C"> Read the
+                        instructions carefully.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q1" class="form-checkbox text-purple-600" value="D"> Experiment
+                        with
+                        the software.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div
+                class="p-4 bg-gradient-to-r from-gray-200 to-blue-200 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-blue-600 mr-2">🎤</span> You have to give an important speech. You would :
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q2" class="form-checkbox text-yellow-600" value="A"> Practice by
+                        reading it several times.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q2" class="form-checkbox text-yellow-600" value="B"> Say it aloud
+                        repeatedly.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q2" class="form-checkbox text-yellow-600" value="C"> Use drawings
+                        or
+                        charts to help explain.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q2" class="form-checkbox text-yellow-600" value="D"> Gather
+                        real-life examples to make it more practical.
+                    </label>
+                </div>
+            </div>
+
+
+            <!-- Question 3 -->
+            <!-- <div class="p-4 bg-gradient-to-r from-gray-200 to-blue-300 shadow-md rounded-lg transition-transform transform hover:scale-105"> -->
+            <div
+                class="p-4 bg-gradient-to-r from-pink-200 to-yellow-100 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-blue-600 mr-2">🧭</span> A person asks for directions. You would :
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q3" class="form-checkbox text-yellow-600" value="A"> Describe the
+                        route to them.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q3" class="form-checkbox text-yellow-600" value="B"> Draw a map or
+                        show a diagram.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q3" class="form-checkbox text-yellow-600" value="C"> Write down the
+                        directions.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q3" class="form-checkbox text-yellow-600" value="D"> Walk with them
+                        to their destination.
+                    </label>
+                </div>
+            </div>
+
+
+            <!-- Question 4 -->
+            <div
+                class="p-4 bg-gradient-to-r from-indigo-100 to-cyan-300 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-red-600 mr-2">🌐</span> You enjoy websites that have:
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q4" class="form-checkbox text-red-600" value="A"> Audio content
+                        such as podcasts or interviews.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q4" class="form-checkbox text-red-600" value="B"> Engaging visual
+                        design, colors, and graphics.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q4" class="form-checkbox text-red-600" value="C"> Well-structured
+                        text explanations.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q4" class="form-checkbox text-red-600" value="D"> Interactive
+                        elements you can experiment with.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+
+            <div
+                class="p-4 bg-gradient-to-r from-blue-200 to-green-100 shadow-md rounded-lg transition-transform transform hover:scale-105">
+
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">🏆</span> After finishing a competition or test, you prefer:
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q5" class="form-checkbox text-teal-600" value="A"> To hear a
+                        spoken summary of your results.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q5" class="form-checkbox text-teal-600" value="B"> To see graphs
+                        and charts of the results.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q5" class="form-checkbox text-teal-600" value="C"> To read a
+                        detailed written report.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q5" class="form-checkbox text-teal-600" value="D"> To reflect on
+                        the experience and lessons learned.
+                    </label>
+                </div>
+            </div>
+
+
+            <!-- Question 6 -->
+            <div
+                class="p-4 bg-gradient-to-r from-purple-200 to-pink-200 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">🔩</span> You are learning how to fix something at home. You would
+                    :
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q6" class="form-checkbox text-teal-600" value="A"> Listen to
+                        an expert explaining the steps.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q6" class="form-checkbox text-teal-600" value="B"> Watch a
+                        video tutorial or diagram.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q6" class="form-checkbox text-teal-600" value="C"> Read a
+                        step-by-step guide.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q6" class="form-checkbox text-teal-600" value="A"> Try fixing
+                        it yourself with trial and error.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div
+                class="p-4 bg-gradient-to-r from-gray-200 to-blue-200 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">📱</span> You are choosing a new phone or camera. What influences
+                    your decision most?
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q7" class="form-checkbox text-teal-600" value="A"> The
+                        salesperson's explanation.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q7" class="form-checkbox text-teal-600" value="B"> The design
+                        and look of the product.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q7" class="form-checkbox text-teal-600" value="C"> Reading the
+                        detailed specifications.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q7" class="form-checkbox text-teal-600" value="D"> Testing the
+                        device in-store.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div
+                class="p-4 bg-gradient-to-r from-pink-200 to-yellow-100 shadow-md rounded-lg transition-transform transform hover:scale-105">
+
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">🍽️</span> You are ordering food at a restaurant. You would:
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q8" class="form-checkbox text-teal-600" value="A"> Ask the waiter
+                        for recommendations.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q8" class="form-checkbox text-teal-600" value="B"> Look at
+                        pictures of the food.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q8" class="form-checkbox text-teal-600" value="C"> Read the menu
+                        descriptions.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q8" class="form-checkbox text-teal-600" value="D"> Choose based
+                        on what you have tried before.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div
+                class="p-4 bg-gradient-to-r from-indigo-100 to-cyan-300 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">📚</span> You are buying a book. What influences your decision
+                    most?
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q9" class="form-checkbox text-teal-600" value="A"> A friend’s
+                        recommendation.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q9" class="form-checkbox text-teal-600" value="B"> The book’s
+                        cover design.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q9" class="form-checkbox text-teal-600" value="C"> Reading a
+                        sample or summary.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q9" class="form-checkbox text-teal-600" value="D"> If it
+                        contains real-life experiences.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div
+                class="p-4 bg-gradient-to-r from-blue-200 to-green-100 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">🔤</span> You are unsure about a word's spelling. You would:
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q10" class="form-checkbox text-teal-600" value="A"> Say it out
+                        loud and decide by sound.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q10" class="form-checkbox text-teal-600" value="B"> Picture how
+                        it looks in your mind.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q10" class="form-checkbox text-teal-600" value="C"> Write it
+                        down to see which looks right.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q10" class="form-checkbox text-teal-600" value="D"> Look it up
+                        in a dictionary.
+                    </label>
+                </div>
+            </div>
+
+
+
+            <!-- Question 11 -->
+            <div
+                class="p-4 bg-gradient-to-r from-purple-200 to-pink-200 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">🩺</span> You have knee pain and visit a doctor. You prefer the
+                    doctor to:
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q11" class="form-checkbox text-teal-600" value="A"> Describe the
+                        issue in words.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q11" class="form-checkbox text-teal-600" value="B"> Show a diagram
+                        of the knee.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q11" class="form-checkbox text-teal-600" value="C"> Give you an
+                        article to read.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q11" class="form-checkbox text-teal-600" value="D"> Use a model to
+                        demonstrate.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div
+                class="p-4 bg-gradient-to-r from-gray-200 to-blue-200 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-teal-600 mr-2">🗺️</span> You are planning a group trip. You would:
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q12" class="form-checkbox text-teal-600" value="A"> Call everyone
+                        to explain the details.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q12" class="form-checkbox text-teal-600" value="B"> Show a map of
+                        the destination.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q12" class="form-checkbox text-teal-600" value="C"> Write a
+                        detailed itinerary.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q12" class="form-checkbox text-teal-600" value="D"> Visit the
+                        place beforehand.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div
+                class="p-4 bg-gradient-to-r from-pink-200 to-yellow-100 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="text-green-600 mr-2">🏞️</span> You want to learn about a new environmental topic. You
+                    would:
+
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q13" class="form-checkbox text-teal-600" value="A"> Listen
+                        to a lecture on the subject.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q13" class="form-checkbox text-teal-600" value="B"> Look at
+                        charts and infographics.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q13" class="form-checkbox text-teal-600" value="C"> Read an
+                        article about it.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q13" class="form-checkbox text-teal-600" value="D"> Go on a
+                        field trip to observe firsthand.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div
+                class="p-4 bg-gradient-to-r from-indigo-100 to-cyan-300 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <span class="text-purple-700 mr-2">📅</span> You are organizing a family event. You would:
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q14" class="form-checkbox text-orange-600" value="A"> Ask
+                        friends for suggestions.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q14" class="form-checkbox text-orange-600" value="B"> Create a
+                        visual plan or design.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q14" class="form-checkbox text-orange-600" value="C"> Write down
+                        a checklist.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q14" class="form-checkbox text-orange-600" value="D"> Try
+                        cooking or setting up as a trial.
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div
+                class="p-4 bg-gradient-to-r from-blue-200 to-green-100 shadow-md rounded-lg transition-transform transform hover:scale-105">
+                <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                    <span class="mr-2">📷</span> You are learning photography. You prefer:
+                </h3>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q15" class="form-checkbox text-teal-600" value="A"> Talking to an
+                        expert about camera settings.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q15" class="form-checkbox text-teal-600" value="B"> Watching
+                        tutorial videos.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q15" class="form-checkbox text-teal-600" value="C"> Reading the
+                        user manual.
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="Q15" class="form-checkbox text-teal-600" value="D"> Taking test
+                        shots to practice.
+                    </label>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="text-center mt-6">
+            <button onclick="collectAnswers()"
+                class="ml-4 bg-pink-400 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-500 transition-colors duration-300 shadow-lg">Submit</button>
+
+        </div>
+    </section>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+
+<script>
+    async function collectAnswers() {
+    const varkMapping = {
+        "V": "Visual",
+        "A": "Aural",
+        "R": "Read/Write",
+        "K": "Kinesthetic"
+    };
+
+    let answers = [];
+
+    for (let i = 1; i <= 15; i++) {
+        let selectedOptions = document.querySelectorAll(`input[name="Q${i}"]:checked`);
+
+        if (selectedOptions.length > 0) {
+            let answerList = Array.from(selectedOptions).map(option => option.value);
+            answers.push({ questionid: i, answer: answerList });
+        } else {
+            Swal.fire({
+                title: "Error!",
+                text: `Please answer all the questions before submitting.`,
+                icon: "error",
+                confirmButtonText: "OK"
+            });
+            return;
+        }
+    }
+
+    console.log("Formatted Answers:", JSON.stringify(answers, null, 2));
+
+    try {
+        let response = await fetch("http://127.0.0.1:8000/vark-result/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(answers)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        let result = await response.json();
+        console.log("API Response:", result);
+
+        let fullCategory = result.category
+        .split(/[\s,]+/)  // Split by spaces or commas
+        .map(letter => varkMapping[letter.trim()] || letter) // Map each character
+        .join(" & "); // Join with "&" if multiple
+
+        Swal.fire({
+            title: "Result",
+            text: `Your dominant learning style: ${fullCategory}`,
+            icon: "success",
+            confirmButtonText: "OK"
+        });
+
+    } catch (error) {
+        console.error("Error:", error);
+        Swal.fire({
+            title: "Error!",
+            text: "Failed to get the result. Please try again later.",
+            icon: "error",
+            confirmButtonText: "OK"
+        });
+    }
+}
+</script>
